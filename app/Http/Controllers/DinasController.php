@@ -2,17 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Dinas;
+use App\Mail\SendEmail;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class DinasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    
+    public function sendEmail(Dinas $id)
+    {
+        $infoMail = [
+            'nama' => $id->pegawai->name,
+        ];
+        Mail::to($id->pegawai->email)->send(new SendEmail($infoMail));
+
+        return redirect(route('perjalanan-dinas.index'))->with('success', 'Berhasil mengirim notifikasi!');
+    }
 
     public function index()
     {

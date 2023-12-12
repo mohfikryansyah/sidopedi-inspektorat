@@ -1,4 +1,4 @@
-<footer class="bg-white w-full mx-auto py-6">
+{{-- <footer class="bg-white w-full mx-auto py-6">
     <div class="text-center">
         <a href="#"
             class="flex flex-col items-center justify-center mb-5 text-2xl font-bold text-gray-900 uppercase">
@@ -57,7 +57,7 @@
         </ul>
     </div>
     </div>
-</footer>
+</footer> --}}
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();

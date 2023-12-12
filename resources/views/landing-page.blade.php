@@ -52,7 +52,7 @@
                 @else
                     <div class="flex md:order-2">
                         <a href="/login"
-                            class="text-white outline-1 outline hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Log
+                            class="text-white outline-1 outline hover:bg-yellow-500 duration-150 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Log
                             in</a>
                     </div>
                 @endauth
@@ -64,48 +64,20 @@
         <div class="py-8 pl-4 pr-2 mx-auto max-w-screen-xl lg:py-16">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="p-8 md:p-12" data-aos="fade-right" data-aos-duration="1000">
-                    <p
-                        class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
-                        <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor" viewBox="0 0 18 18">
-                            <path
-                                d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z" />
-                        </svg>
-                        Pungutan Liar
-                    </p>
-                    <p
-                        class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
-                        <svg class="w-2.5 h-2.5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor" viewBox="0 0 18 18">
-                            <path
-                                d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z" />
-                        </svg>
-                        Gratifikasi
-                    </p>
                     <h2 class="text-gray-900 dark:text-white md:text-4xl text-2xl font-extrabold mb-2">Selamat Datang ...
                     </h2>
-                    <p class="md:text-xl text-base font-normal text-gray-500 dark:text-gray-400 mb-4">Sistem Informasi
-                        Perjalanan Dinas Inspektorat Kota Gorontalo.
-                        <span class="text-red-400">Pegawai yang sedang perjalanan dinas ditandai dengan </span>
-                        <span class="inline-flex w-3 h-3 bg-green-500 rounded-full"></span>
+                    <p class="md:text-xl text-base font-normal text-gray-500 dark:text-gray-400 mb-4">Selamat datang di website Inspektorat! Kami berkomitmen untuk transparan, akuntabel, dan memberikan layanan terbaik dalam pengawasan pemerintahan. 
                     </p>
-                    <a href="#tabel-perjalanan-dinas"
-                        class="text-blue-600 dark:text-yellow-500 hover:underline font-medium text-lg inline-flex items-center">Lihat daftar
-                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
+                    <p class="md:text-xl text-base font-normal text-blue-500 dark:text-gray-400 mb-4">Terima kasih!</p>
                 </div>
                 <div class="p-8 md:p-12 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
-                    <img class="h-80 max-w-full" src="{{ asset('/assets/images/computer.png') }}" alt="image description">
+                    <img class="h-80 max-w-full" src="{{ asset('/assets/images/worker.png') }}" alt="image description">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tabel-perjalanan-dinas" class="bg-gray-50 overflow-hidden">
+    {{-- <section id="tabel-perjalanan-dinas" class="bg-gray-50 overflow-hidden">
         <div class="max-w-screen-xl px-6 py-8 mx-auto lg:py-24 lg:px-6">
             @if (count($dinas))
                 <div class="w-full rounded-xl border border-gray-200" data-aos="zoom-out" data-aos-duration="1000">
@@ -176,7 +148,7 @@
             @endif
 
         </div>
-    </section>
+    </section> --}}
     @include('layouts.partials.footer-landing-page')
     @include('layouts.partials.footer')
     @include('layouts.partials.end')

@@ -9,7 +9,8 @@
                         <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Daftar pegawai yang sedang atau
                             tidak mengikuti perjalanan dinas.</p>
                     @else
-                        <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Daftar pegawai yang sedang perjalanan dinas.</p>
+                        <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Daftar pegawai yang sedang
+                            perjalanan dinas.</p>
                     @endrole
                 </caption>
                 <thead
@@ -30,6 +31,9 @@
                         @role('ADMIN')
                             <th scope="col" class="px-6 py-3">
                                 Action
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Notif Email
                             </th>
                         @endrole
                     </tr>
@@ -119,6 +123,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <a href="{{ route('sendEmail', ['id' => $d->id]) }}"
+                                        class="text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-1.5 dark:bg-yellow-600 dark:hover:bg-yellow-700 focus:outline-none dark:focus:ring-yellow-800">Kirim</a>
+
                                 </td>
                             @endrole
                             {{-- @include('livewire.components.modal-button') --}}

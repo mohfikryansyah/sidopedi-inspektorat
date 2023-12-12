@@ -32,6 +32,7 @@ Route::get('/dashboard', function () {
 Route::resource('/surat-tugas', SuratTugasController::class)->middleware(['auth']);
 Route::resource('/laporan', LaporanController::class)->middleware(['auth']);
 Route::resource('/perjalanan-dinas', DinasController::class)->middleware(['auth', 'role:ADMIN']);
+Route::get('/kirim-email/{id}', [DinasController::class, 'sendEmail'])->middleware(['auth', 'role:ADMIN'])->name('sendEmail');
 Route::post('/toggle-perjalanan-dinas/{dinas}', [DinasController::class, 'toggleStatus'])->middleware('auth');
 
 Route::middleware('auth')->group(function () {
