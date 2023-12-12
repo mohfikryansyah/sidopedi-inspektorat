@@ -42,7 +42,7 @@ class LaporanController extends Controller
     {
         $validasi = $request->validate([
             'user_id' => 'required',
-            'laporan' => 'required|mimes:pdf|file|max:1024',
+            'laporan' => 'required|max:1024',
         ]);
 
         $validasi['laporan'] = $request->file('laporan')->store('laporan');
