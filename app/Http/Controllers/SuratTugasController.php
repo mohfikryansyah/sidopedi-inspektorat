@@ -45,7 +45,7 @@ class SuratTugasController extends Controller
         // dd($request->all());
         $validasi = $request->validate([
             'user_id' => 'required',
-            'surat_tugas' => 'required|mimes:pdf|file|max:1024',
+            'surat_tugas' => 'required|file|max:1024',
         ]);
 
         $validasi['surat_tugas'] = $request->file('surat_tugas')->store('surat-tugas');
