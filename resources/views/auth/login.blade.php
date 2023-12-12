@@ -2,7 +2,7 @@
 <main class="h-screen bg-gray-100">
     <div class="flex flex-col items-center justify-center px-6 mx-auto h-screen">
         <a href="/" class="flex items-center justify-center mb-8 text-2xl font-bold lg:mb-10">
-            <img src="{{ asset('image/LOGO_KOTA_GORONTALO.png') }}" class="h-16 mr-4" alt="Inspektorat" />
+            <img src="{{ asset('/assets/images/LOGO_KOTA_GORONTALO.png') }}" class="h-16 mr-4" alt="Inspektorat" />
         </a>
         <!-- Card -->
         <div class="w-full max-w-md p-6 space-y-8 sm:p-8 bg-gray-50 rounded-lg shadow">
