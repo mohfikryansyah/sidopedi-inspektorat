@@ -62,4 +62,3 @@
 <script>
     AOS.init();
 </script>
-<script src="{{ asset('build/assets/app-5365bb75.js') }}"></script>
