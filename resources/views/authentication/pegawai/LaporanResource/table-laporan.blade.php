@@ -16,9 +16,11 @@
                 <th scope="col" class="px-6 py-3">
                     Laporan
                 </th>
+                @role('PEGAWAI')
                 <th scope="col" class="px-6 py-3">
                     Action
                 </th>
+                @endrole
             </tr>
         </thead>
         <tbody>
@@ -33,6 +35,7 @@
                     <td class="px-6 py-4">
                         <a href="{{ asset('storage/' . $lapor->laporan) }}" class="text-blue-600">Lihat</a>
                     </td>
+                    @role('PEGAWAI')
                     <td class="px-6 py-4 flex items-center space-x-2">
                         <a href="{{ route('laporan.edit', ['laporan' => $lapor->id]) }}"
                             class="font-medium text-green-400 hover:text-green-500 duration-150">Ubah</a>
@@ -85,9 +88,8 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </td>
+                    @endrole
                 </tr>
             @empty
                 <tr
