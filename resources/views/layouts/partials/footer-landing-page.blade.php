@@ -58,3 +58,8 @@
     </div>
     </div>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="{{ asset('build/assets/app-5365bb75.js') }}"></script>
