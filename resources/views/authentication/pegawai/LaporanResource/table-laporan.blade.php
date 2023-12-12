@@ -1,8 +1,8 @@
-@if (auth()->user()->hasRole('ADMIN'))
+@role('ADMIN')
     <div class="col-span-12">
 @else
     <div class="col-span-5">
-@endif
+@endrole
 <div class="relative overflow-x-auto shadow-md rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-50 uppercase bg-yellow-400 dark:bg-gray-700 dark:text-gray-400">
