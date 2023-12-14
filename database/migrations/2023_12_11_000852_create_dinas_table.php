@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('dinas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('start');
             $table->date('end');
             $table->boolean('perjalanan_dinas')->default(true);
