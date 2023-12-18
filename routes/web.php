@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DinasController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UndanganController;
 use App\Http\Controllers\SuratTugasController;
 
 /*
@@ -30,6 +31,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
+Route::resource('/undangan', UndanganController::class)->middleware(['auth']);
 Route::resource('/surat-tugas', SuratTugasController::class)->middleware(['auth']);
 Route::resource('/laporan', LaporanController::class)->middleware(['auth']);
 Route::resource('/perjalanan-dinas', DinasController::class)->middleware(['auth', 'role:ADMIN']);

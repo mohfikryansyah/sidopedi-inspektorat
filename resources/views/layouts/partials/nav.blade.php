@@ -76,7 +76,11 @@
                     </li>
                     <li>
                         <a href="{{ route('users') }}"
-                            class="{{ Request::is('perjalanan-dinas') ? 'text-gray-50' : 'text-gray-800' }} block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-50 md:p-0 duration-200">Users</a>
+                            class="{{ Request::is('users') ? 'text-gray-50' : 'text-gray-800' }} block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-50 md:p-0 duration-200">Users</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('undangan.index') }}"
+                            class="{{ Request::is('undangan') ? 'text-gray-50' : 'text-gray-800' }} block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-50 md:p-0 duration-200">Undangan</a>
                     </li>
                 @endrole
             </ul>
