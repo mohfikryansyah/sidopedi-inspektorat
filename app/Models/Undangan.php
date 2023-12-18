@@ -10,7 +10,7 @@ class Undangan extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $fillable = ['user_id', 'undangan'];
+    protected $fillable = ['undangan'];
 
     public function pegawai()
     {

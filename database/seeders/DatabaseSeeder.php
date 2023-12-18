@@ -19,11 +19,18 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@inspektorat.com',
             'password' => 'inspektorat!23',
         ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Administrator',
+            'email' => 'moh.fikryansyah@gmail.com',
+            'password' => 'fiqriansyah2001',
+        ]);
 
         Role::create(['name' => 'ADMIN']);
         Role::create(['name' => 'PEGAWAI']);
 
         $admin = User::find(1);
         $admin->assignRole('ADMIN');
+        $user = User::find(2);
+        $user->assignRole('PEGAWAI');
     }
 }

@@ -35,7 +35,6 @@ class UndanganController extends Controller
     public function store(Request $request)
     {
         $validasi = $request->validate([
-            'user_id' => 'required',
             'undangan' => 'required|file|max:1024',
         ]);
 
@@ -77,7 +76,6 @@ class UndanganController extends Controller
     public function update(Request $request, Undangan $undangan)
     {
         $validasi = $request->validate([
-            'user_id' => 'required',
             'undangan' => 'mimes:pdf|file|max:1024',
         ]);
 

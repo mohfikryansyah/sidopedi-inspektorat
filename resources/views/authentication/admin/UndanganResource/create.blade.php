@@ -1,19 +1,8 @@
 <div class="col-span-2 row-span-1 bg-gray-100 shadow-md rounded-lg">
-    <h1 class="bg-yellow-400 rounded-t-lg py-2 px-5 font-semibold text-white">Kirim Surat Tugas</h1>
+    <h1 class="bg-yellow-400 rounded-t-lg py-2 px-5 font-semibold text-white">Arsip Undangan</h1>
     <div class="p-5">
         <form method="POST" action="{{ route('undangan.store') }}" enctype="multipart/form-data" class="mb-0">
             @csrf
-            <div>
-                <label for="penerima"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Penerima</label>
-                <select id="penerima" name="user_id"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500">
-                    <option disabled selected>Pilih...</option>
-                    @foreach ($users->skip(1) as $user)
-                        <option value="{{ $user->id }}">{{ $user->name }}</option>
-                    @endforeach
-                </select>
-            </div>
 
             <div class="mt-4 mb-5">
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="undangan">Upload Undangan</label>
