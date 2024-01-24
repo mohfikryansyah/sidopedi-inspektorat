@@ -9,6 +9,6 @@
 <body>
     <h2>Halo, {{ $infoMail['nama'] }}</h2>
     <h3>Laporan Perjalanan Dinas anda ditunggu dalam 7x24 jam.</h3>
-    <h4>Terima Kasih❤️</h4>
+    <h4>Terima Kasih.</h4>
 </body>
 </html>

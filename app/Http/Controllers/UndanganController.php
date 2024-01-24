@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Undangan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -34,13 +35,16 @@ class UndanganController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validasi = $request->validate([
             'undangan' => 'required|file|max:1024',
         ]);
-
+        
         $validasi['undangan'] = $request->file('undangan')->store('undangan');
+        $validasi['dibuat_pada'] = Carbon::now()->format('Y-m-d');
 
-        // dd($validasi);
+
+        dd($validasi);
 
         Undangan::create($validasi);
 

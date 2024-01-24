@@ -2,15 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Undangan extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $fillable = ['undangan'];
+    protected $fillable = ['undangan', 'dibuat_pada'];
+
+    public static function hariIni()
+    {
+        self::create([
+            'waktu' => Carbon::now()->format('Y-m-d H:i:s'), // Format timestamp
+        ]);
+    }
 
     public function pegawai()
     {
