@@ -10,7 +10,8 @@ class UserController extends Controller
     public function index()
     {
         return view('authentication.admin.UserResource.index', [
-            'users' => User::all()
+            'users' => User::all(),
+            'header' => 'Users'
         ]);
     }
 
