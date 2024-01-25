@@ -44,8 +44,6 @@ class UndanganController extends Controller
         $validasi['dibuat_pada'] = Carbon::now()->format('Y-m-d');
 
 
-        dd($validasi);
-
         Undangan::create($validasi);
 
         return redirect()
