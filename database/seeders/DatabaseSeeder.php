@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'password' => 'inspektorat!23',
         ]);
         \App\Models\User::factory()->create([
-            'name' => 'Administrator',
+            'name' => 'Fiqriansyah',
             'email' => 'moh.fikryansyah@gmail.com',
             'password' => 'fiqriansyah2001',
         ]);
