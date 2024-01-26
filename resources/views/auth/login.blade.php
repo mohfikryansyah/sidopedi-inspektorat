@@ -45,6 +45,9 @@
                             class="text-yellow-400">Sign Up</a>
                     </div>
                 </div>
+                <div class="md:text-base text-xs text-gray-500 dark:text-gray-400"><a href="/forgot-password"
+                        class="text-yellow-400">Lupa Password?</a>
+                </div>
                 <button type="submit"
                     class="w-full px-5 py-2 text-base font-medium text-center text-white bg-yellow-400 hover:bg-yellow-500 rounded-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 sm:w-auto ">Login</button>
 
