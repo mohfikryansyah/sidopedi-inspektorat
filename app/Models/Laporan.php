@@ -10,7 +10,7 @@ class Laporan extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $fillable = ['user_id', 'laporan'];
+    protected $fillable = ['user_id', 'laporan', 'judul'];
 
     public function pegawai()
     {

@@ -14,6 +14,9 @@
                     Tanggal
                 </th>
                 <th scope="col" class="px-6 py-3">
+                    Judul Laporan
+                </th>
+                <th scope="col" class="px-6 py-3">
                     Laporan
                 </th>
                 @role('PEGAWAI')
@@ -31,7 +34,11 @@
                         {{ $lapor->pegawai->name }}
                     </th>
                     <td class="px-6 py-4 whitespace-nowrap">
-                        {{ $lapor->created_at }}
+                        {{ date('Y-m-d', strtotime($lapor->created_at)) }}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <p>{{ $lapor->judul }}</p>
+                    </td>
                     <td class="px-6 py-4">
                         <a href="{{ asset('storage/' . $lapor->laporan) }}" class="text-blue-600">Lihat</a>
                     </td>

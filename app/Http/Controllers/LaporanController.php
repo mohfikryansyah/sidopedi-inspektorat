@@ -16,9 +16,9 @@ class LaporanController extends Controller
     {
         $user = Auth::user();
         if ($user->hasRole('ADMIN')) {
-            $laporan = Laporan::with(['pegawai'])->get();
+            $laporan = Laporan::with(['pegawai'])->latest()->get();
         } else {
-            $laporan = Laporan::with(['pegawai'])->where('user_id', $user->id)->get();
+            $laporan = Laporan::with(['pegawai'])->where('user_id', $user->id)->latest()->get();
         }
         
         return view('authentication.pegawai.index', [
@@ -42,7 +42,8 @@ class LaporanController extends Controller
     {
         $validasi = $request->validate([
             'user_id' => 'required',
-            'laporan' => 'required|max:1024',
+            'laporan' => 'required|file|max:1024',
+            'judul' => 'required',
         ]);
 
         $validasi['laporan'] = $request->file('laporan')->store('laporan');
@@ -83,7 +84,8 @@ class LaporanController extends Controller
     {
         $validasi = $request->validate([
             'user_id' => 'required',
-            'laporan' => 'mimes:pdf|file|max:1024',
+            'laporan' => 'file|max:1024',
+            'judul' => 'required',
         ]);
 
         $laporan = Laporan::find($laporan->id);
