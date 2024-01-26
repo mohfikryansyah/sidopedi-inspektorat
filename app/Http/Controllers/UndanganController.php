@@ -17,8 +17,8 @@ class UndanganController extends Controller
     {
         return view('authentication.admin.UndanganResource.index', [
             'users' => User::all(),
-            'undangans' => Undangan::all(),
-            'header' => 'Undangan',
+            'undangans' => Undangan::latest()->get(),
+            'header' => 'Undangan Surat Tugas',
         ]);
     }
 
@@ -38,6 +38,7 @@ class UndanganController extends Controller
         
         $validasi = $request->validate([
             'undangan' => 'required|file|max:1024',
+            'judul' => 'required',
         ]);
         
         $validasi['undangan'] = $request->file('undangan')->store('undangan');
@@ -78,7 +79,8 @@ class UndanganController extends Controller
     public function update(Request $request, Undangan $undangan)
     {
         $validasi = $request->validate([
-            'undangan' => 'mimes:pdf|file|max:1024',
+            'undangan' => 'file|max:1024',
+            'judul' => 'required',
         ]);
 
         $undangan = Undangan::find($undangan->id);

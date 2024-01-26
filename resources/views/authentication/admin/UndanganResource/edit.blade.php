@@ -2,33 +2,31 @@
 @section('content')
     <div class="md:grid md:space-y-0 space-y-4 grid-cols-7 gap-5">
         <div class="col-span-2 row-span-1 bg-gray-100 shadow-md rounded-lg">
-            <h1 class="bg-yellow-400 rounded-t-lg py-2 px-5 font-semibold text-white">Ubah Surat Tugas</h1>
+            <h1 class="bg-yellow-400 rounded-t-lg py-2 px-5 font-semibold text-white">Ubah Arsip Undangan</h1>
             <div class="p-5">
-                <form method="POST" action="{{ route('undangan.update', ['undangan' => $undangan->id]) }}" enctype="multipart/form-data" class="mb-0">
+                <form method="POST" action="{{ route('undangan.update', ['undangan' => $undangan->id]) }}"
+                    enctype="multipart/form-data" class="mb-0">
                     @csrf
                     @method('put')
                     <div>
-                        <label for="penerima"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Penerima</label>
-                        <select id="penerima" name="user_id"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" required>
-                            <option disabled selected>Pilih...</option>
-                            @foreach ($users as $user)
-                                @if (old('user_id', $undangan->user_id) === $user->id)
-                                    <option value="{{ $user->id }}" selected>{{ $user->name }}</option>
-                                @else
-                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                @endif
-                            @endforeach
-                        </select>
+                        <label for="judul" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Judul
+                            Undangan</label>
+                        <input type="text" id="judul" name="judul" value="{{ old('judul', $undangan->judul) }}"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        @error('judul')
+                            <p>{{ $message }}</p>
+                        @enderror
                     </div>
-
                     <div class="mt-4 mb-5">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="undangan">Upload
                             Undangan</label>
                         <input
                             class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            id="undangan" name="undangan" type="file">
+                            id="undangan" name="undangan" type="file" aria-describedby="file_input_help">
+                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PDF (MAX. 1MB).</p>
+                        @error('undangan')
+                            <p>{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <button type="submit"

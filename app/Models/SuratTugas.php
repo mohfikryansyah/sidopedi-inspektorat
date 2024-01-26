@@ -10,7 +10,7 @@ class SuratTugas extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $fillable = ['user_id', 'surat_tugas'];
+    protected $fillable = ['user_id', 'surat_tugas', 'judul'];
 
     public function pegawai()
     {

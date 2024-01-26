@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('surat_tugas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('judul');
             $table->string('surat_tugas');
             $table->timestamps();
         });

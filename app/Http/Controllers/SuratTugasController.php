@@ -17,9 +17,9 @@ class SuratTugasController extends Controller
     {   
         $user = Auth::user();
         if ($user->hasRole('ADMIN')) {
-            $SuratTugas = SuratTugas::with(['pegawai'])->get();
+            $SuratTugas = SuratTugas::with(['pegawai'])->latest()->get();
         } else {
-            $SuratTugas = SuratTugas::with(['pegawai'])->where('user_id', $user->id)->get();
+            $SuratTugas = SuratTugas::with(['pegawai'])->where('user_id', $user->id)->latest()->get();
         }
         
         return view('authentication.admin.SuratTugasResource.index', [
@@ -46,6 +46,7 @@ class SuratTugasController extends Controller
         $validasi = $request->validate([
             'user_id' => 'required',
             'surat_tugas' => 'required|file|max:1024',
+            'judul' => 'required',
         ]);
 
         $validasi['surat_tugas'] = $request->file('surat_tugas')->store('surat-tugas');
@@ -86,6 +87,7 @@ class SuratTugasController extends Controller
         $validasi = $request->validate([
             'user_id' => 'required',
             'surat_tugas' => 'mimes:pdf|file|max:1024',
+            'judul' => 'required',
         ]);
         
         $suratTugas = SuratTugas::find($surat_tuga->id);

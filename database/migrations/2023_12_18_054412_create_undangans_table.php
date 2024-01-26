@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('undangans', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
             $table->string('undangan');
             $table->timestamp('dibuat_pada')->nullable();
             $table->timestamps();
