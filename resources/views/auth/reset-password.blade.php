@@ -1,4 +1,4 @@
-<x-guest-layout>
+@extends('layouts.app')
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
@@ -36,4 +36,3 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>

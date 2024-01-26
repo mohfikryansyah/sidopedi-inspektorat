@@ -43,7 +43,7 @@ class LaporanController extends Controller
         $validasi = $request->validate([
             'user_id' => 'required',
             'laporan' => 'required|file|max:1024',
-            'judul' => 'required',
+            'judul' => 'required|max:255',
         ]);
 
         $validasi['laporan'] = $request->file('laporan')->store('laporan');
@@ -85,7 +85,7 @@ class LaporanController extends Controller
         $validasi = $request->validate([
             'user_id' => 'required',
             'laporan' => 'file|max:1024',
-            'judul' => 'required',
+            'judul' => 'required|max:255',
         ]);
 
         $laporan = Laporan::find($laporan->id);

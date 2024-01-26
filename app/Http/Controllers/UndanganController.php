@@ -38,7 +38,7 @@ class UndanganController extends Controller
         
         $validasi = $request->validate([
             'undangan' => 'required|file|max:1024',
-            'judul' => 'required',
+            'judul' => 'required|max:255',
         ]);
         
         $validasi['undangan'] = $request->file('undangan')->store('undangan');
@@ -80,7 +80,7 @@ class UndanganController extends Controller
     {
         $validasi = $request->validate([
             'undangan' => 'file|max:1024',
-            'judul' => 'required',
+            'judul' => 'required|max:255',
         ]);
 
         $undangan = Undangan::find($undangan->id);
