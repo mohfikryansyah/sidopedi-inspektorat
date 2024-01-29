@@ -17,7 +17,7 @@ class UndanganController extends Controller
     {
         return view('authentication.admin.UndanganResource.index', [
             'users' => User::all(),
-            'undangans' => Undangan::latest()->get(),
+            'undangans' => Undangan::where('judul', 'like', '%' . request('search') .'%' )->latest()->get(),
             'header' => 'Undangan Surat Tugas',
         ]);
     }

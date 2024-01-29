@@ -3,7 +3,10 @@
     @include('layouts.partials.alert-success')
     <a href="{{ route('perjalanan-dinas.create') }}"
         class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">Tambahkan</a>
+    <div class="mt-6">
 
+        @include('layouts.partials.search-input')
+    </div>
     @include('authentication.admin.PerjalananDinasResource.table-perjalanan-dinas')
 
     <script>

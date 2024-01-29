@@ -17,7 +17,7 @@ class SuratTugasController extends Controller
     {   
         $user = Auth::user();
         if ($user->hasRole('ADMIN')) {
-            $SuratTugas = SuratTugas::with(['pegawai'])->latest()->get();
+            $SuratTugas = SuratTugas::with(['pegawai'])->where('judul', 'like', '%' . request('search') .'%' )->latest()->get();
         } else {
             $SuratTugas = SuratTugas::with(['pegawai'])->where('user_id', $user->id)->latest()->get();
         }

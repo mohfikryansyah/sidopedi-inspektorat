@@ -16,9 +16,9 @@ class LaporanController extends Controller
     {
         $user = Auth::user();
         if ($user->hasRole('ADMIN')) {
-            $laporan = Laporan::with(['pegawai'])->latest()->get();
+            $laporan = Laporan::with(['pegawai'])->where('judul', 'like', '%' . request('search') .'%' )->latest()->get();
         } else {
-            $laporan = Laporan::with(['pegawai'])->where('user_id', $user->id)->latest()->get();
+            $laporan = Laporan::with(['pegawai'])->where('user_id', $user->id)->where('judul', 'like', '%' . request('search') .'%' )->latest()->get();
         }
         
         return view('authentication.pegawai.index', [
